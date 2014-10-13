@@ -27,6 +27,7 @@ public class BookAdd extends ActionSupport{
 		age = getAge();
 		country = getCountry();
 		mylist = DBConnection.insert(bookname,writername,isbn,publisher,publishdate,price,age,country);//change it a func can carry args
+		System.out.println("git1");
 		return SUCCESS;
 	}
 

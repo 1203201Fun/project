@@ -19,6 +19,7 @@ public class DBConnection {
 
 	public static List<String[]> insert(String name,String writer,String isbn,String publisher,String publishdate,String price,String age,String country) {//different
 		String value = null;
+		System.out.println("git1");
 		String []temp = new String[6];
 		List<String[]> mylist= new ArrayList<String[]>();
 		conn = getConnection();

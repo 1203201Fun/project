@@ -13,6 +13,7 @@ public class BookDelete extends ActionSupport{
 		List<String[]> mylist= new ArrayList<String[]>();
 		
 		bookname = getBookname();
+		System.out.println("git1");
 		String message = DBConnection.delete("dictionary","name",bookname);
 		mylist = DBConnection.query("name",bookname,"dictionary");
 		String message2 = DBConnection.delete("author","Name",bookname);
