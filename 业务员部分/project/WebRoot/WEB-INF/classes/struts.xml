@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<include file="struts-default.xml"/>
+<package name="guest" extends="struts-default">
+	
+	<action name="login" class="guest.login" ><!--搜索动作，调用搜索类  -->
+		<result name="failed">/login.jsp</result>     
+		<result name="Admin">/Admin.jsp</result>
+		<result name="Guest">/slide.jsp</result>
+	</action>
+	<action name="search" class="guest.deviceSearch" ><!--搜索动作，调用搜索类  -->
+		<result name="failed">/AddUser.jsp</result>     
+		<result name="success">/deviceResult.jsp</result>
+	</action>
+	<action name="guestupdate" class="guest.guestUpdate" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/showAdd.jsp</result>
+	</action>
+	<action name="lendUpdate" class="guest.lendUpdate" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/deviceResult.jsp</result>
+		<result name="failed">/slide.jsp</result>
+	</action>
+	<action name="lendHistory" class="guest.lendHistory" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/lendHistory.jsp</result>
+		<result name="empty">/lendHistory.jsp</result>
+	</action>
+	<action name="deviceRepair" class="guest.deviceRepair" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/diesoon.jsp</result>
+		<result name="failed">/slide.jsp</result>
+	</action>
+	<action name="retDevice" class="guest.retDevice" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/lendHistory.jsp</result>
+		<result name="empty">/slide.jsp</result>
+	</action>
+	<action name="userInfo" class="guest.userInfo" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/userInfo.jsp</result>
+	</action>
+	<action name="userInfoUpdate" class="guest.userInfoUpdate" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/userInfo.jsp</result>
+	</action>
+	
+</package>
+</struts>    
