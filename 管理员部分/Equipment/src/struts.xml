@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="myaction" extends="struts-default">
+	<!-- 定义一个拦截器 -->  
+        <interceptors>  
+            <interceptor name="authority" class="com.Action.Userpass">  
+            </interceptor>  
+            <!-- 拦截器栈 -->  
+            <interceptor-stack name="mydefault">  
+                <interceptor-ref name="defaultStack" />  
+                <interceptor-ref name="authority" />  
+            </interceptor-stack>  
+        </interceptors>  
+	 <!-- 定义全局Result -->  
+        <global-results>  
+            <!-- 当返回login视图名时，转入/Rlogin.jsp页面 -->  
+            <result name="login">/Rlogin.jsp</result>  
+        </global-results>  
+		<action name="login" class="com.Action.ActionLogin">
+			<result name="Admin">/second/Manager.jsp</result>
+			<result name="Guest">/second/Guest.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="show" class="com.Action.Show">
+			<result name="2">/second/Guest.jsp</result>
+			<result name="1">/second/Manager.jsp</result>
+			<result name="3">/second/Guest.jsp</result>
+			<result name="4">/second/Guest.jsp</result>
+			<!-- 使用此拦截器   -->
+			<interceptor-ref name="mydefault" />  
+		</action>
+		<action name="mangerShow" class="com.Action.ManShow">
+			<result name="1">/second/Manager.jsp</result>
+			<result name="2">/second/Man_user.jsp</result>
+			<result name="3">/second/Man_reg.jsp</result>
+			<result name="4">/second/Man_Details.jsp</result>
+			<result name="5">/second/Man_mesage.jsp</result>
+			<result name="6">/index.jsp</result>
+			<!-- 使用此拦截器 <interceptor-ref name="mydefault" />  -->  
+			<interceptor-ref name="mydefault" />
+		</action>
+		<action name="userdelete" class="com.Action.Userdelete">
+			<result name="success" type="chain">mangerShow</result>
+			<result name="error">/error.jsp</result>
+			<!-- 使用此拦截器 <interceptor-ref name="mydefault" />  --> 
+			<interceptor-ref name="mydefault" />
+		</action>
+		<action name="Repair" class="com.Action.RepairAction">
+			<result name="success" type="chain">mangerShow</result>
+			<result name="error">/error.jsp</result>
+			<!-- 使用此拦截器 <interceptor-ref name="mydefault" />  -->
+			<interceptor-ref name="mydefault" /> 
+		</action>
+		<action name="revert" class="com.Action.RevertAction">
+			<result name="success" type="chain">mangerShow</result>
+			<result name="error">/error.jsp</result>
+			<!-- 使用此拦截器 <interceptor-ref name="mydefault" />  -->
+			<interceptor-ref name="mydefault" /> 
+		</action>
+		<action name="add" class="com.Action.AddAction">
+			<result name="success" type="chain">mangerShow</result>
+			<result name="error">/error.jsp</result>
+			<!-- 使用此拦截器 <interceptor-ref name="mydefault" />  -->
+			<interceptor-ref name="mydefault" /> 
+		</action>
+
+
+		<action name="plus" class="com.depot.PlusDevice">
+			<result name="success">/second/Man_reg.jsp</result>
+			<result name="error">/error.jsp</result>
+			<!-- 使用此拦截器 <interceptor-ref name="mydefault" />  -->
+			<interceptor-ref name="mydefault" /> 
+		</action>
+
+		<action name="zhuce" class="com.depot.Zhuce">
+			<result name="error">/error.jsp</result>
+			<result name="success">/login.jsp</result>
+		</action>
+
+		<action name="back" class="com.depot.Back">
+			
+			<result name="success">/Rlogin.jsp</result>
+			<result name="1">/zhu_ce.jsp</result>
+			<result name="3">/second/Man_reg.jsp</result>
+			<result name="4" type="chain">mangerShow</result>
+			<result name="5" type="chain">mangerShow</result>
+			<result name="6" type="chain">mangerShow</result>
+			<!-- 使用此拦截器 <interceptor-ref name="mydefault" />  -->
+		</action>
+	</package>
+</struts>    
+	
+	
+	
+	
+	
+	
