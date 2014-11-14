@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<include file="struts-default.xml"/>
+<package name="hehehe" extends="struts-default">
+	
+	<action name="Search" class="lab2.BookSearchAction" ><!--搜索动作，调用搜索类  -->
+		<result name="failed">/failed.jsp</result>       <!-- 搜到书名就去success页面，反之去failed页面 -->
+		<result name="success">/success.jsp</result>
+	</action>
+	
+	<action name="Update" class="lab2.BookUpdate">         <!--更新动作，调用更新类 -->
+		<result name = "success">/showchange.jsp</result>  <!-- 更新后跳转展示结果页面 -->
+	</action>
+	
+	<action name="BookAdd" class="lab2.BookAdd">             <!-- 添加图书动作，调用图书添加类 -->
+		<result name = "success">/showchange.jsp</result>    <!-- 添加成功跳转结果展示页面 -->
+	</action>
+	 
+	<action name="Delete" class="lab2.BookDelete">         <!-- 删除动作，调用图书删除类 -->
+		<result name = "success">/index.jsp</result>       <!-- 删除成功或失败都会有相应提示 -->
+		<result name = "failed">/fj.jsp</result>
+	</action>
+
+
+
+
+
+
+</package>
+</struts>
