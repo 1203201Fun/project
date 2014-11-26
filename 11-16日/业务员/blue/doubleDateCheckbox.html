@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>两栏时间控件2.0</title>
+<script type="text/javascript" src="jquery-1.4.4.js"></script>
+<!-- 时间选择框 -->
+<script type="text/javascript" src="doubleDateCheckbox.js"></script>
+<link href="blue/doubleDateCheckbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(function(){
+	//time box
+	$('.doubledate').kuiDate({className: 'doubledate',isDisabled: "0"});
+})
+</script>
+</head>
+
+<body>
+<ul class="iptgroup">
+	<li class="f-left name" style="padding:5px;">出发日期</li>
+	<li class="f-left">
+			<input type="text" readonly="readonly" class="doubledate ipticon"/>
+	</li>
+	<li class="f-left name" style="padding:5px;">返程日期</li>
+	<li class="f-left">
+			<input type="text" readonly="readonly" class="doubledate ipticon"/>
+	</li>
+</ul>
+<br /><br /><br /><br /><br />
+<p>调用代码：</p>
+<p>jquery代码：$('.doubledate').kuiDate({className: 'doubledate',isDisabled: &quot;0&quot;});</p>
+<p>body部分代码：</p>
+<p>&lt;input type=&quot;text&quot; readonly=&quot;readonly&quot; class=&quot;doubledate ipticon&quot;/&gt;</p>
+<p>参数说明：</p>
+<p>class：doubledate为文本框class值，可自行修改，body部分与jquery代码部分的class值必须对应，为必须参数</p>
+<p>isDisabled为可选参数，“0”表示今日之前不可选，“1”标志今日之前可选</p>
+</body>
+</html>

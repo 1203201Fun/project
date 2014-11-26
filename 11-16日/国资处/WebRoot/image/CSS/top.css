@@ -1,0 +1,72 @@
+﻿#menu{
+	font:微软雅黑;
+	font-size:14px;
+	width:0 auto 0 0;
+	background:url(under.gif)
+}
+#menu ul{
+	display:block;
+	width:90%;
+	height:35px;
+	padding:0 0 0 108px;
+	margin:0;
+	
+	list-style:none;
+}
+#menu ul li{
+	float:left;
+	width:16%;
+}
+#menu ul li a{
+	display:block;
+	line-height:35px;
+	color:#ddd;
+	text-decoration:none;
+	
+}
+#menu ul li a:hover{
+	color:#fff;
+	background:url(hover.gif);
+	width:auto;
+}
+#menu ul li a b{
+	display:block
+}
+#menu ul li a:hover b{
+	color:#fff;
+	background:url(hover.gif) no-repeat right top;
+}
+#menu ul li a b{
+	display:block;
+	
+}
+#admin{
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+	height:95%;
+	background:#CCC;
+}
+#adm_user{
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+}
+#adm_user td{
+	font-family:楷体;
+	font-size:20px;
+	color:black;
+	font-weight:400;
+}
+#adm_dj{
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#adm_dj td{
+	font-family:楷体;
+	font-size:20px;
+	color:black;
+	font-weight:400;
+}
