@@ -1,0 +1,29 @@
+#log{
+	margin-top:50px;
+	font:楷体;
+	font-size:24px;
+	color:#FFF;
+	height:332px;
+	width:490px;
+	margin-left:auto;
+	margin-right:auto;
+	background:url(blog.jpg);
+}
+#log b{
+	font-size:24px;
+	font-family:楷体;
+}
+#tab {
+	height:180px;
+	width:323px;
+	background:url(login.png);
+	alignment-adjust:middle;
+}
+#register{
+	margin-top:100px;
+	height:140px;
+}
+#register td{
+	font-size:24px;
+	color:#FFF;
+}

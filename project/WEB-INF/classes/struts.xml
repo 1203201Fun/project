@@ -1,0 +1,163 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<include file="struts-default.xml"/>
+<package name="guest" extends="struts-default">	
+	<action name="login" class="guest.login" ><!--搜索动作，调用搜索类  -->
+		<result name="failed">/login.jsp</result>     
+		<result name="Admin">/second/Manager.jsp</result>
+		<result name="Guest">/slide.jsp</result>
+	</action>
+	<action name="guestsearch" class="guest.deviceSearch" ><!--搜索动作，调用搜索类  -->
+		<result name="failed">/AddUser.jsp</result>     
+		<result name="success">/deviceResult.jsp</result>
+	</action>
+	<action name="guestupdate" class="guest.guestUpdate" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/showAdd.jsp</result>
+	</action>
+	<action name="writeTable" class="guest.writeTable" >    
+		<result name="success">/checkapply.jsp</result>
+	</action> 
+	<action name="redit" class="guest.redit" >    
+		<result name="success">/writeTable.jsp</result>
+		<result name="failed">/guestSearch.jsp</result>
+	</action> 
+	<action name="checkapply" class="guest.checkapply" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/checkapply.jsp</result>
+		<result name="failed">/guestSearch.jsp</result>
+	</action>
+	<action name="deviceRepair" class="guest.deviceRepair" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/checkapply.jsp</result>
+		<result name="failed">/slide.jsp</result>
+	</action>
+	<action name="retDevice" class="guest.retDevice" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/lendHistory.jsp</result>
+		<result name="empty">/slide.jsp</result>
+	</action>
+	<action name="userInfo" class="guest.userInfo" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/userInfo.jsp</result>
+	</action>
+	<action name="userInfoUpdate" class="guest.userInfoUpdate" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/userInfo.jsp</result>
+	</action>
+	<action name="showDetails" class="guest.showDetails" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/showDetails.jsp</result>
+	</action>
+	<action name="upload" class="guest.upload" ><!--搜索动作，调用搜索类  -->    
+		<result name="success">/checkapply.jsp</result>
+	</action>
+</package>
+<package name="myaction" extends="struts-default">
+ 
+		<action name="show" class="com.Action.Show">
+			<result name="2">/second/Guest.jsp</result>
+			<result name="1">/second/Manager.jsp</result>
+			<result name="3">/second/Guest.jsp</result>
+			<result name="4">/second/Guest.jsp</result>
+			 
+		</action>
+		<action name="mangerShow" class="com.Action.ManShow">
+			<result name="1">/second/Manager.jsp</result>
+			<result name="2">/second/Man_user.jsp</result>
+			<result name="3">/second/Man_reg.jsp</result>
+			<result name="4">/second/Man_Details.jsp</result>
+			<result name="5">/second/Man_mesage.jsp</result>
+			<result name="6">/welcome.jsp</result>
+			
+		</action>
+		<action name="userdelete" class="com.Action.Userdelete">
+			<result name="one" type="chain">mangerShow</result>
+			<result name="two" type="chain">search</result>
+			<result name="error">/error.jsp</result>
+			
+		</action>
+		<action name="Repair" class="com.Action.RepairAction">
+			<result name="success" type="chain">mangerShow</result>
+			<result name="error">/error.jsp</result>
+			 
+		</action>
+		<action name="revert" class="com.Action.RevertAction">
+			<result name="success" type="chain">mangerShow</result>
+			<result name="error">/error.jsp</result>
+			
+		</action>
+		<action name="add" class="com.Action.AddAction">
+			<result name="success" type="chain">mangerShow</result>
+			<result name="error">/error.jsp</result>
+			
+		</action>
+
+
+		<action name="plus" class="com.depot.PlusDevice">
+			<result name="success">/second/Man_reg.jsp</result>
+			<result name="error">/error.jsp</result>
+			
+		</action>
+
+		<action name="zhuce" class="com.depot.Zhuce">
+			<result name="error">/error.jsp</result>
+			<result name="success" type="chain">mangerShow</result>
+			
+		</action>
+
+		<action name="back" class="com.depot.Back">
+			
+			<result name="success">/Rlogin.jsp</result>
+			<result name="1">/zhu_ce.jsp</result>
+			<result name="3">/second/Man_reg.jsp</result>
+			<result name="4" type="chain">mangerShow</result>
+			<result name="5" type="chain">mangerShow</result>
+			<result name="6" type="chain">mangerShow</result>
+			 
+		</action>
+
+
+		<action name="search" class="com.Today.Usearch">
+			<result name="success">/second/Man_u.jsp</result>
+			 
+		</action>
+
+		<action name="devsearch" class="com.Today.Devsearch">
+			<result name="success">/second/Man_D.jsp</result>
+			 
+		</action>
+
+	 	<action name="devdetail" class="com.Today.Devdetail">
+			<result name="success">/second/detaildev.jsp</result>
+			  
+		</action>
+	
+
+		<action name="tasearch" class="com.Today.Tasearch">
+			<result name="success">/second/Man_m.jsp</result>
+			  
+		</action>
+
+		<action name="register" class="com.Today.Register">
+			<result name="success">/zhu_ce.jsp</result>
+			
+		</action>
+		<action name="newsearch" class="com.Today.Newsearch">
+			<result name="success">/second/Man_r.jsp</result>
+			 
+		</action>
+		<action name="view" class="com.Today.View">
+			<result name="success">/second/Man_g.jsp</result>
+			<result name="error" type="chain">mangerShow</result>
+			  
+		</action>
+		<action name="approve" class="com.Today.Approve">
+			<result name="success">/second/Man_g.jsp</result>
+			 
+		</action>
+		<action name="allsearch" class="com.Today.Allsearch">
+			<result name="1">/second/modify.jsp</result>
+			<result name="2">/second/trim.jsp</result>
+			  
+		</action>
+		<action name="lastsearch" class="com.Today.Lastsearch">
+			<result name="1">/second/modify_cs.jsp</result>
+			<result name="2">/second/trim_cs.jsp</result>
+			
+		</action>
+	</package>
+</struts>    
